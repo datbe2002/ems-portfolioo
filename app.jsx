@@ -5,9 +5,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "serif": "Plus Jakarta Sans",
   "density": "cozy",
   "advisorName": "Tăng Thị Thảo Trang",
-  "advisorRegion": "TPHCM",
-  "advisorPhone": "086 6033594",
-  "advisorEmail": "thaotrang5901@gmail.com"
+  "advisorTitle": "Trưởng phòng phát triển đại lý cá nhân",
+  "advisorBranch": "PTI Thống Nhất",
+  "advisorRegion": "Lầu 2, Chung cư Thủy Lợi 4, số 205 Nguyễn Xí, Phường 25, Quận Bình Thạnh, TP. Hồ Chí Minh",
+  "advisorPhone": "0866 033 594",
+  "advisorEmail": "trangttt2@pti.com.vn"
 } /*EDITMODE-END*/;
 
 // ── icons ────────────────────────────────────────────────────────────────
@@ -62,21 +64,21 @@ function LogoMark() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="lm-svg">
       <text x="11" y="17.5" textAnchor="middle"
-            fontFamily="Georgia, 'Times New Roman', serif"
-            fontSize="18" fontWeight="500" letterSpacing="-0.02em"
-            fill="currentColor">P</text>
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="18" fontWeight="500" letterSpacing="-0.02em"
+        fill="currentColor">P</text>
       <circle cx="18" cy="7" r="1.6" className="lm-dot" />
     </svg>
   );
 }
 
 const NAV = [
-{ id: "about", label: "Giới thiệu" },
-{ id: "services", label: "Dịch vụ" },
-{ id: "process", label: "Quy trình" },
-{ id: "reviews", label: "Đánh giá" },
-{ id: "faq", label: "FAQ" },
-{ id: "contact", label: "Liên hệ" }];
+  { id: "about", label: "Giới thiệu" },
+  { id: "services", label: "Dịch vụ" },
+  { id: "process", label: "Quy trình" },
+  { id: "reviews", label: "Đánh giá" },
+  { id: "faq", label: "FAQ" },
+  { id: "contact", label: "Liên hệ" }];
 
 
 function Header({ onCta }) {
@@ -99,22 +101,22 @@ function Header({ onCta }) {
         <div className="wrap hdr-inner">
           <nav className="nav-desktop">
             {NAV.map((n) =>
-            <a key={n.id} className="nav-link" onClick={() => go(n.id)}>{n.label}</a>
+              <a key={n.id} className="nav-link" onClick={() => go(n.id)}>{n.label}</a>
             )}
           </nav>
           <button className="btn btn-primary btn-sm hdr-cta" onClick={onCta}>
             Tư vấn miễn phí <Ico.arrow style={{ width: 14, height: 14 }} />
           </button>
           <button className="btn btn-secondary btn-sm nav-mobile-btn" aria-label="Menu"
-          onClick={() => setMobileOpen((v) => !v)}>
+            onClick={() => setMobileOpen((v) => !v)}>
             {mobileOpen ? <Ico.x style={{ width: 16, height: 16 }} /> : <Ico.burger style={{ width: 16, height: 16 }} />}
           </button>
         </div>
       </header>
       {mobileOpen &&
-      <div className="mobile-menu">
+        <div className="mobile-menu">
           {NAV.map((n) => <a key={n.id} onClick={() => go(n.id)}>{n.label}</a>)}
-          <button className="btn btn-primary" onClick={() => {setMobileOpen(false);onCta();}}>
+          <button className="btn btn-primary" onClick={() => { setMobileOpen(false); onCta(); }}>
             Nhận tư vấn miễn phí <Ico.arrow style={{ width: 16, height: 16 }} />
           </button>
         </div>
@@ -146,10 +148,10 @@ function PortraitSilhouette({ tint = "rgba(255,255,255,.18)" }) {
 // ── Hero ────────────────────────────────────────────────────────────────
 function Hero({ onCta, advisorName }) {
   const trustBadges = [
-  "Tư vấn rõ ràng",
-  "Hỗ trợ nhanh chóng",
-  "Đồng hành khi bồi thường",
-  "Giải pháp từ PTI"];
+    "Tư vấn rõ ràng",
+    "Hỗ trợ nhanh chóng",
+    "Đồng hành khi bồi thường",
+    "Giải pháp từ PTI"];
 
   return (
     <section className="hero" id="top" data-screen-label="01 Hero">
@@ -179,7 +181,7 @@ function Hero({ onCta, advisorName }) {
           </div>
           <div className="trust-row">
             {trustBadges.map((t) =>
-            <span key={t} className="trust-pill">
+              <span key={t} className="trust-pill">
                 <Ico.check />
                 {t}
               </span>
@@ -190,8 +192,8 @@ function Hero({ onCta, advisorName }) {
         <div className="reveal in" style={{ transitionDelay: ".15s" }}>
           <div className="portrait">
             <img className="photo" src="assets/advisor-portrait.png"
-                 alt="Tư vấn viên bảo hiểm PTI"
-                 loading="eager" fetchpriority="high" decoding="async" />
+              alt="Tư vấn viên bảo hiểm PTI"
+              loading="eager" fetchpriority="high" decoding="async" />
             <div className="portrait-badge">
               <span className="dot" />
               Đang nhận tư vấn
@@ -206,9 +208,9 @@ function Hero({ onCta, advisorName }) {
 // ── About ───────────────────────────────────────────────────────────────
 function About({ advisorName }) {
   const values = [
-  { ico: <Ico.spark />, title: "Minh bạch trong tư vấn", desc: "Giải thích đầy đủ điều khoản, phạm vi và điều kiện trước khi ký hợp đồng." },
-  { ico: <Ico.heart />, title: "Tận tâm khi hỗ trợ", desc: "Lắng nghe nhu cầu thực tế, không ép mua, không phóng đại quyền lợi." },
-  { ico: <Ico.shield />, title: "Đồng hành khi rủi ro", desc: "Hỗ trợ chuẩn bị hồ sơ và theo dõi tiến độ bồi thường cùng khách hàng." }];
+    { ico: <Ico.spark />, title: "Minh bạch trong tư vấn", desc: "Giải thích đầy đủ điều khoản, phạm vi và điều kiện trước khi ký hợp đồng." },
+    { ico: <Ico.heart />, title: "Tận tâm khi hỗ trợ", desc: "Lắng nghe nhu cầu thực tế, không ép mua, không phóng đại quyền lợi." },
+    { ico: <Ico.shield />, title: "Đồng hành khi rủi ro", desc: "Hỗ trợ chuẩn bị hồ sơ và theo dõi tiến độ bồi thường cùng khách hàng." }];
 
   return (
     <section className="section" id="about" data-screen-label="02 About">
@@ -219,8 +221,8 @@ function About({ advisorName }) {
               <div className="frame-corner tl" />
               <div className="frame-corner br" />
               <img className="photo" src="assets/advisor-about.png"
-                   alt="Tư vấn viên bảo hiểm PTI"
-                   loading="lazy" decoding="async" />
+                alt="Tư vấn viên bảo hiểm PTI"
+                loading="lazy" decoding="async" />
               <div className="credential" style={{ opacity: "0" }}>
                 <span className="logo-mark">
                   <Ico.shield style={{ width: 14, height: 14 }} />
@@ -249,7 +251,7 @@ function About({ advisorName }) {
 
             <div className="values">
               {values.map((v) =>
-              <div key={v.title} className="value">
+                <div key={v.title} className="value">
                   <span className="ico">{React.cloneElement(v.ico, { style: { width: 18, height: 18 } })}</span>
                   <b>{v.title}</b>
                   <span>{v.desc}</span>
@@ -266,12 +268,12 @@ function About({ advisorName }) {
 // ── Services ────────────────────────────────────────────────────────────
 function Services() {
   const items = [
-  { ico: <Ico.car />, title: "Bảo hiểm xe ô tô / xe máy", desc: "Bảo vệ trước rủi ro tai nạn, va chạm, trách nhiệm dân sự và thiệt hại vật chất xe." },
-  { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
-  { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
-  { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
-  { ico: <Ico.building />, title: "Bảo hiểm doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
-  { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
+    { ico: <Ico.car />, title: "Bảo hiểm xe ô tô / xe máy", desc: "Bảo vệ trước rủi ro tai nạn, va chạm, trách nhiệm dân sự và thiệt hại vật chất xe." },
+    { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
+    { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
+    { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
+    { ico: <Ico.building />, title: "Bảo hiểm doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
+    { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
 
   return (
     <section className="section" id="services" data-screen-label="03 Services" style={{ background: "linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand-soft) 50%, var(--bg)))" }}>
@@ -286,14 +288,14 @@ function Services() {
         </div>
         <div className="grid-3 reveal">
           {items.map((s) =>
-          <div key={s.title} className="card card-hover svc">
+            <div key={s.title} className="card card-hover svc">
               <span className="svc-ico">{React.cloneElement(s.ico, { style: { width: 24, height: 24 } })}</span>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
               <a className="more" href="#contact" onClick={(e) => {
-              e.preventDefault();
-              scrollToId("contact");
-            }}>
+                e.preventDefault();
+                scrollToId("contact");
+              }}>
                 Tìm hiểu thêm <Ico.arrow style={{ width: 14, height: 14 }} />
               </a>
             </div>
@@ -307,12 +309,12 @@ function Services() {
 // ── Why ─────────────────────────────────────────────────────────────────
 function Why() {
   const reasons = [
-  "Tư vấn dựa trên nhu cầu thực tế, không ép mua",
-  "Giải thích điều khoản bảo hiểm dễ hiểu",
-  "Hỗ trợ trước, trong và sau khi ký hợp đồng",
-  "Đồng hành khi khách hàng cần làm hồ sơ bồi thường",
-  "Đưa ra giải pháp phù hợp với ngân sách",
-  "Làm việc chuyên nghiệp, phản hồi nhanh"];
+    "Tư vấn dựa trên nhu cầu thực tế, không ép mua",
+    "Giải thích điều khoản bảo hiểm dễ hiểu",
+    "Hỗ trợ trước, trong và sau khi ký hợp đồng",
+    "Đồng hành khi khách hàng cần làm hồ sơ bồi thường",
+    "Đưa ra giải pháp phù hợp với ngân sách",
+    "Làm việc chuyên nghiệp, phản hồi nhanh"];
 
   return (
     <section className="section" id="why" data-screen-label="04 Why">
@@ -323,19 +325,19 @@ function Why() {
         </div>
         <div className="why-grid reveal">
           {reasons.map((r, i) =>
-          <div key={r} className="why-item">
+            <div key={r} className="why-item">
               <span className="num">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <b>{r}</b>
                 <span>
                   {[
-                "Lắng nghe trước, đề xuất sau — không gây áp lực quyết định.",
-                "Bóc tách các điều khoản phức tạp thành ngôn ngữ đời thường.",
-                "Hỗ trợ liên tục, kể cả sau khi hợp đồng đã có hiệu lực.",
-                "Tôi đứng cạnh bạn trong toàn bộ quy trình bồi thường.",
-                "Cân đối quyền lợi và ngân sách thay vì chọn gói đắt nhất.",
-                "Cam kết phản hồi trong thời gian hợp lý, không để bạn chờ."][
-                i]}
+                    "Lắng nghe trước, đề xuất sau — không gây áp lực quyết định.",
+                    "Bóc tách các điều khoản phức tạp thành ngôn ngữ đời thường.",
+                    "Hỗ trợ liên tục, kể cả sau khi hợp đồng đã có hiệu lực.",
+                    "Tôi đứng cạnh bạn trong toàn bộ quy trình bồi thường.",
+                    "Cân đối quyền lợi và ngân sách thay vì chọn gói đắt nhất.",
+                    "Cam kết phản hồi trong thời gian hợp lý, không để bạn chờ."][
+                    i]}
                 </span>
               </div>
             </div>
@@ -349,10 +351,10 @@ function Why() {
 // ── Process ─────────────────────────────────────────────────────────────
 function Process() {
   const steps = [
-  { n: "01", t: "Lắng nghe nhu cầu", d: "Tìm hiểu tình trạng cá nhân, tài sản, phương tiện hoặc doanh nghiệp của khách hàng." },
-  { n: "02", t: "Đề xuất giải pháp", d: "Gợi ý gói bảo hiểm phù hợp với nhu cầu và ngân sách của bạn." },
-  { n: "03", t: "Giải thích quyền lợi", d: "Làm rõ phạm vi, điều khoản loại trừ, phí bảo hiểm và quy trình bồi thường." },
-  { n: "04", t: "Đồng hành sau bán", d: "Hỗ trợ khi cần thay đổi thông tin, gia hạn hợp đồng hoặc yêu cầu bồi thường." }];
+    { n: "01", t: "Lắng nghe nhu cầu", d: "Tìm hiểu tình trạng cá nhân, tài sản, phương tiện hoặc doanh nghiệp của khách hàng." },
+    { n: "02", t: "Đề xuất giải pháp", d: "Gợi ý gói bảo hiểm phù hợp với nhu cầu và ngân sách của bạn." },
+    { n: "03", t: "Giải thích quyền lợi", d: "Làm rõ phạm vi, điều khoản loại trừ, phí bảo hiểm và quy trình bồi thường." },
+    { n: "04", t: "Đồng hành sau bán", d: "Hỗ trợ khi cần thay đổi thông tin, gia hạn hợp đồng hoặc yêu cầu bồi thường." }];
 
   return (
     <section className="section" id="process" data-screen-label="05 Process" style={{ background: "linear-gradient(180deg, color-mix(in oklab, var(--brand-soft) 50%, var(--bg)), transparent)" }}>
@@ -366,7 +368,7 @@ function Process() {
         </div>
         <div className="process reveal">
           {steps.map((s) =>
-          <div key={s.n} className="step">
+            <div key={s.n} className="step">
               <span className="marker">{s.n}</span>
               <h4>{s.t}</h4>
               <p>{s.d}</p>
@@ -381,10 +383,10 @@ function Process() {
 // ── Stats ───────────────────────────────────────────────────────────────
 function Stats() {
   const stats = [
-  { big: "100+", small: "khách hàng đã được tư vấn và đồng hành" },
-  { big: "24 / 7", small: "sẵn sàng hỗ trợ thông tin khi cần thiết" },
-  { big: "6", small: "nhóm sản phẩm bảo hiểm phi nhân thọ chủ lực" },
-  { big: "A → Z", small: "đồng hành từ tư vấn đến bồi thường" }];
+    { big: "100+", small: "khách hàng đã được tư vấn và đồng hành" },
+    { big: "24 / 7", small: "sẵn sàng hỗ trợ thông tin khi cần thiết" },
+    { big: "6", small: "nhóm sản phẩm bảo hiểm phi nhân thọ chủ lực" },
+    { big: "A → Z", small: "đồng hành từ tư vấn đến bồi thường" }];
 
   return (
     <section className="section" id="stats" data-screen-label="06 Stats" style={{ paddingTop: 0 }}>
@@ -392,7 +394,7 @@ function Stats() {
         <div className="stats">
           <div className="stats-grid">
             {stats.map((s) =>
-            <div key={s.big} className="stat">
+              <div key={s.big} className="stat">
                 <b>{s.big}</b>
                 <span>{s.small}</span>
               </div>
@@ -407,9 +409,9 @@ function Stats() {
 // ── Testimonials ────────────────────────────────────────────────────────
 function Testimonials() {
   const items = [
-  { q: "Bạn tư vấn rất dễ hiểu, giúp tôi chọn gói bảo hiểm xe phù hợp mà không bị rối bởi quá nhiều điều khoản.", who: "Anh Tuấn", role: "Khách hàng cá nhân — Hà Nội", initial: "T" },
-  { q: "Khi cần hỏi về hồ sơ bồi thường, tôi được hỗ trợ nhanh và rõ ràng. Cảm giác có người đồng hành thật sự khác biệt.", who: "Chị Hương", role: "Chủ hộ kinh doanh — Hải Phòng", initial: "H" },
-  { q: "Tôi thích cách tư vấn minh bạch, không ép mua, phân tích đúng nhu cầu — chứ không phải gói đắt nhất.", who: "Anh Quang", role: "Khách hàng doanh nghiệp — Bắc Ninh", initial: "Q" }];
+    { q: "Bạn tư vấn rất dễ hiểu, giúp tôi chọn gói bảo hiểm xe phù hợp mà không bị rối bởi quá nhiều điều khoản.", who: "Anh Tuấn", role: "Khách hàng cá nhân — Hà Nội", initial: "T" },
+    { q: "Khi cần hỏi về hồ sơ bồi thường, tôi được hỗ trợ nhanh và rõ ràng. Cảm giác có người đồng hành thật sự khác biệt.", who: "Chị Hương", role: "Chủ hộ kinh doanh — Hải Phòng", initial: "H" },
+    { q: "Tôi thích cách tư vấn minh bạch, không ép mua, phân tích đúng nhu cầu — chứ không phải gói đắt nhất.", who: "Anh Quang", role: "Khách hàng doanh nghiệp — Bắc Ninh", initial: "Q" }];
 
   return (
     <section className="section" id="reviews" data-screen-label="07 Testimonials">
@@ -420,7 +422,7 @@ function Testimonials() {
         </div>
         <div className="grid-3 reveal">
           {items.map((it, i) =>
-          <div key={i} className="card quote">
+            <div key={i} className="card quote">
               <div className="stars">
                 {[0, 1, 2, 3, 4].map((s) => <Ico.star key={s} />)}
               </div>
@@ -443,16 +445,26 @@ function Testimonials() {
 // ── FAQ ─────────────────────────────────────────────────────────────────
 function FAQ() {
   const items = [
-  { q: "Bảo hiểm phi nhân thọ là gì?",
-    a: "Là các sản phẩm bảo hiểm bảo vệ trước rủi ro về tài sản, sức khỏe, trách nhiệm dân sự, xe cơ giới, du lịch và hoạt động kinh doanh. Khác với bảo hiểm nhân thọ, các sản phẩm này thường có thời hạn ngắn (1 năm) và tập trung vào bồi thường thiệt hại khi xảy ra rủi ro." },
-  { q: "Tôi nên mua loại bảo hiểm nào trước?",
-    a: "Tùy vào nhu cầu cụ thể của bạn. Nếu bạn có xe, nên ưu tiên bảo hiểm xe (bao gồm cả trách nhiệm dân sự bắt buộc). Nếu có gia đình, nên cân nhắc bảo hiểm sức khỏe. Nếu kinh doanh, nên xem xét bảo hiểm tài sản và trách nhiệm cho hoạt động kinh doanh." },
-  { q: "Khi xảy ra rủi ro, tôi cần làm gì?",
-    a: "Liên hệ ngay tư vấn viên hoặc tổng đài hỗ trợ của PTI, giữ lại tất cả chứng từ liên quan (ảnh hiện trường, hóa đơn, giấy tờ y tế, biên bản…) và chuẩn bị hồ sơ theo hướng dẫn. Tôi sẽ đồng hành cùng bạn trong toàn bộ quy trình." },
-  { q: "Tư vấn có mất phí không?",
-    a: "Tư vấn ban đầu hoàn toàn miễn phí. Bạn có thể trao đổi nhu cầu, nhận đề xuất gói bảo hiểm phù hợp và hiểu rõ phí trước khi ra quyết định." },
-  { q: "Tôi có thể thay đổi gói bảo hiểm sau khi đã ký không?",
-    a: "Có những thay đổi được cho phép tùy theo điều khoản hợp đồng (ví dụ: bổ sung quyền lợi, thay đổi đối tượng bảo hiểm…). Hãy liên hệ trước khi gia hạn hoặc khi nhu cầu của bạn thay đổi để được tư vấn cụ thể." }];
+    {
+      q: "Bảo hiểm phi nhân thọ là gì?",
+      a: "Là các sản phẩm bảo hiểm bảo vệ trước rủi ro về tài sản, sức khỏe, trách nhiệm dân sự, xe cơ giới, du lịch và hoạt động kinh doanh. Khác với bảo hiểm nhân thọ, các sản phẩm này thường có thời hạn ngắn (1 năm) và tập trung vào bồi thường thiệt hại khi xảy ra rủi ro."
+    },
+    {
+      q: "Tôi nên mua loại bảo hiểm nào trước?",
+      a: "Tùy vào nhu cầu cụ thể của bạn. Nếu bạn có xe, nên ưu tiên bảo hiểm xe (bao gồm cả trách nhiệm dân sự bắt buộc). Nếu có gia đình, nên cân nhắc bảo hiểm sức khỏe. Nếu kinh doanh, nên xem xét bảo hiểm tài sản và trách nhiệm cho hoạt động kinh doanh."
+    },
+    {
+      q: "Khi xảy ra rủi ro, tôi cần làm gì?",
+      a: "Liên hệ ngay tư vấn viên hoặc tổng đài hỗ trợ của PTI, giữ lại tất cả chứng từ liên quan (ảnh hiện trường, hóa đơn, giấy tờ y tế, biên bản…) và chuẩn bị hồ sơ theo hướng dẫn. Tôi sẽ đồng hành cùng bạn trong toàn bộ quy trình."
+    },
+    {
+      q: "Tư vấn có mất phí không?",
+      a: "Tư vấn ban đầu hoàn toàn miễn phí. Bạn có thể trao đổi nhu cầu, nhận đề xuất gói bảo hiểm phù hợp và hiểu rõ phí trước khi ra quyết định."
+    },
+    {
+      q: "Tôi có thể thay đổi gói bảo hiểm sau khi đã ký không?",
+      a: "Có những thay đổi được cho phép tùy theo điều khoản hợp đồng (ví dụ: bổ sung quyền lợi, thay đổi đối tượng bảo hiểm…). Hãy liên hệ trước khi gia hạn hoặc khi nhu cầu của bạn thay đổi để được tư vấn cụ thể."
+    }];
 
   const [open, setOpen] = React.useState(0);
   return (
@@ -464,7 +476,7 @@ function FAQ() {
         </div>
         <div className="faq-list reveal">
           {items.map((it, i) =>
-          <div key={i} className="faq-item" data-open={open === i}>
+            <div key={i} className="faq-item" data-open={open === i}>
               <button className="faq-q" onClick={() => setOpen(open === i ? -1 : i)}>
                 <span>{it.q}</span>
                 <span className="faq-icon"><Ico.plus style={{ width: 14, height: 14 }} /></span>
@@ -479,18 +491,53 @@ function FAQ() {
 }
 
 // ── Contact ─────────────────────────────────────────────────────────────
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzjmhVSccFIMjcHojLiliatLanqu6OdmUsB5nrtsTlfjIES4_AA-XZ_XtBvMdWbXYCE/exec";
+
 function Contact({ advisor }) {
   const [submitted, setSubmitted] = React.useState(false);
-  const [form, setForm] = React.useState({ name: "", phone: "", need: "Bảo hiểm xe ô tô / xe máy", msg: "" });
+  const [lastSubmit, setLastSubmit] = React.useState(0);
+  const [honey, setHoney] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
+  const [form, setForm] = React.useState({
+    name: "", phone: "",
+    need: "Bảo hiểm xe ô tô / xe máy", msg: ""
+  });
+  const COOLDOWN = 60;
+
   const onChange = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
-  const submit = (e) => {
+
+  const submit = async (e) => {
     e.preventDefault();
+
+    if (honey) return;
+
+    const now = Date.now();
+    const secondsLeft = Math.ceil((COOLDOWN * 1000 - (now - lastSubmit)) / 1000);
+    if (lastSubmit && secondsLeft > 0) {
+      alert(`Vui lòng chờ ${secondsLeft} giây trước khi gửi lại.`);
+      return;
+    }
+
+    setLastSubmit(now);
+    setLoading(true);
+
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (_) { }
+
+    setLoading(false);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 5000);
   };
+
   return (
     <section className="section" id="contact" data-screen-label="09 Contact"
-    style={{ background: "linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand-soft) 60%, var(--bg)))" }}>
+      style={{ background: "linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand-soft) 60%, var(--bg)))" }}>
       <div className="wrap">
         <div className="reveal" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
           <span className="section-eyebrow">Liên hệ tư vấn</span>
@@ -502,39 +549,62 @@ function Contact({ advisor }) {
 
         <div className="contact-grid">
           <form className="contact-card reveal" onSubmit={submit}>
+            <input type="text" value={honey} onChange={(e) => setHoney(e.target.value)}
+              style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
             <div className="field">
               <label>Họ và tên</label>
-              <input type="text" required placeholder="Nguyễn Văn A" value={form.name} onChange={onChange("name")} />
+              <input type="text" required placeholder="Nguyễn Văn A"
+                value={form.name} onChange={onChange("name")} />
             </div>
             <div className="field">
               <label>Số điện thoại</label>
-              <input type="tel" required placeholder="09xx xxx xxx" value={form.phone} onChange={onChange("phone")} />
+              <input type="tel" required placeholder="09xx xxx xxx"
+                value={form.phone} onChange={onChange("phone")} />
             </div>
             <div className="field">
               <label>Nhu cầu bảo hiểm</label>
               <select value={form.need} onChange={onChange("need")}>
-                {["Bảo hiểm xe ô tô / xe máy", "Bảo hiểm sức khỏe cá nhân", "Bảo hiểm tài sản", "Bảo hiểm du lịch", "Bảo hiểm doanh nghiệp", "Tư vấn hồ sơ bồi thường", "Tôi chưa rõ — cần tư vấn"].map((o) => <option key={o}>{o}</option>)}
+                {["Bảo hiểm xe ô tô / xe máy", "Bảo hiểm sức khỏe cá nhân",
+                  "Bảo hiểm tài sản", "Bảo hiểm du lịch",
+                  "Bảo hiểm doanh nghiệp", "Tư vấn hồ sơ bồi thường",
+                  "Tôi chưa rõ — cần tư vấn"].map((o) => <option key={o}>{o}</option>)}
               </select>
             </div>
             <div className="field">
               <label>Tin nhắn (không bắt buộc)</label>
-              <textarea placeholder="Mô tả ngắn về nhu cầu của bạn..." value={form.msg} onChange={onChange("msg")} />
+              <textarea placeholder="Mô tả ngắn ví dụ ra, hiệu xe, năm sản xuất..."
+                value={form.msg} onChange={onChange("msg")} />
             </div>
-            {submitted ?
-            <div className="form-success">
+
+            {submitted ? (
+              <div className="form-success">
                 <Ico.check style={{ width: 18, height: 18 }} />
                 Đã ghi nhận yêu cầu — tôi sẽ liên hệ lại sớm. Cảm ơn bạn!
-              </div> :
-
-            <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>
-                Gửi yêu cầu tư vấn <Ico.arrow style={{ width: 16, height: 16 }} />
+              </div>
+            ) : (
+              <button type="submit" className="btn btn-primary"
+                style={{ width: "100%" }} disabled={loading}>
+                {loading ? (
+                  <>
+                    <span style={{
+                      width: 16, height: 16, border: "2px solid currentColor",
+                      borderTopColor: "transparent", borderRadius: "50%",
+                      display: "inline-block", animation: "spin .7s linear infinite"
+                    }} />
+                    Đang gửi...
+                  </>
+                ) : (
+                  <><span>Gửi yêu cầu tư vấn</span><Ico.arrow style={{ width: 16, height: 16 }} /></>
+                )}
               </button>
-            }
+            )}
+
             <p style={{ fontSize: 12.5, color: "var(--muted)", marginTop: 14, marginBottom: 0, lineHeight: 1.55 }}>
               Bằng việc gửi yêu cầu, bạn đồng ý để tôi liên hệ tư vấn các sản phẩm bảo hiểm phù hợp.
             </p>
           </form>
 
+          {/* Phần info-block và quick-contact giữ nguyên không đổi */}
           <div className="reveal">
             <div className="info-block">
               <div className="info-row">
@@ -543,7 +613,7 @@ function Contact({ advisor }) {
               </div>
               <div className="info-row">
                 <span className="ico"><Ico.briefcase style={{ width: 18, height: 18 }} /></span>
-                <div><b>Đơn vị</b><span>Tổng Công ty CP Bảo hiểm Bưu điện (PTI)</span></div>
+                <div><b>Đơn vị</b><span>CÔNG TY BẢO HIỂM BƯU ĐIỆN THỐNG NHẤT<br />Tầng 2, 205 Nguyễn Xí, Phường Bình Thạnh, TP.HCM</span></div>
               </div>
               <div className="info-row">
                 <span className="ico"><Ico.phone style={{ width: 18, height: 18 }} /></span>
@@ -559,7 +629,7 @@ function Contact({ advisor }) {
               </div>
               <div className="info-row">
                 <span className="ico"><Ico.clock style={{ width: 18, height: 18 }} /></span>
-                <div><b>Thời gian phản hồi</b><span>Trong giờ hành chính, 7 ngày/tuần</span></div>
+                <div><b>Thời gian phản hồi</b><span>24/7</span></div>
               </div>
             </div>
 
@@ -584,58 +654,127 @@ function Contact({ advisor }) {
           </div>
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
 
 // ── Footer ──────────────────────────────────────────────────────────────
+function PtiBrandMark({ pretty, tag, accent = "#F5A623" }) {
+  return (
+    <div className="pti-mark">
+      <div className="pti-mark-row">
+        <span className="pti-mark-pti">
+          <span className="pti-mark-curve" style={{ background: accent }} />
+          pti
+        </span>
+        <span className="pti-mark-italic" style={{ color: accent }}>{pretty}</span>
+      </div>
+      <div className="pti-mark-tag">{tag}</div>
+    </div>
+  );
+}
+
 function Footer({ advisor }) {
+  const subBrands = [
+    { pretty: "SOS", tag: "Cứu hộ & Bảo hiểm", accent: "#F5A623" },
+    { pretty: "Care", tag: "Sức khỏe & Bảo hiểm", accent: "#3D74E0" },
+    { pretty: "Commercial", tag: "Chuyên gia tư vấn & Bảo hiểm", accent: "#F5A623" },
+  ];
   return (
     <footer className="footer">
-      <div className="wrap footer-grid">
-        <div>
-          <div className="logo brand-logo">
-            <span className="logo-mark"><LogoMark /></span>
-            <span>
-              <span style={{ display: "block", lineHeight: 1.1 }}>{advisor.name}</span>
-              <small>Tư vấn bảo hiểm phi nhân thọ tại PTI</small>
-            </span>
+      <div className="wrap">
+        {/* Business-card block */}
+        <div className="footer-card">
+          <div className="footer-card-head">
+            <div className="footer-card-logo">
+              <div className="pti-logo-lg">
+                <span className="pti-logo-curve" />
+                pti
+              </div>
+              <div className="pti-logo-side">
+                <div>People</div>
+                <div>Trust</div>
+                <div>Insurance</div>
+              </div>
+            </div>
+            <div className="footer-card-pub">BẢO HIỂM BƯU ĐIỆN</div>
           </div>
-          <p className="blurb">
-            Đồng hành cùng cá nhân, gia đình và doanh nghiệp trong việc lựa chọn các giải pháp
-            bảo hiểm phi nhân thọ phù hợp — minh bạch, tận tâm và lâu dài.
-          </p>
+
+          <div className="footer-card-divider" />
+
+          <div className="footer-card-body">
+            <div>
+              <div className="fc-name">{advisor.name}</div>
+              <div className="fc-title">{advisor.title}</div>
+              <div className="fc-branch">{advisor.branch}</div>
+            </div>
+            <ul className="fc-contact">
+              <li>
+                <span className="fc-ico"><Ico.pin style={{ width: 14, height: 14 }} /></span>
+                <span>{advisor.region}</span>
+              </li>
+              <li>
+                <span className="fc-ico"><Ico.phone style={{ width: 14, height: 14 }} /></span>
+                <a href={`tel:${advisor.phone.replace(/\s/g, "")}`}>{advisor.phone}</a>
+              </li>
+              <li>
+                <span className="fc-ico"><Ico.mail style={{ width: 14, height: 14 }} /></span>
+                <a href={`mailto:${advisor.email}`}>{advisor.email}</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h5>Liên hệ nhanh</h5>
-          <ul>
-            <li><a href="#contact">📞 {advisor.phone}</a></li>
-            <li><a href="#contact">✉ {advisor.email}</a></li>
-            <li><a href="#contact">📍 {advisor.region}</a></li>
-            <li><a href="#contact">Zalo · Facebook</a></li>
-          </ul>
+
+        {/* Sub-brand row */}
+        <div className="footer-subbrands">
+          <div className="footer-subbrands-label">Các nhóm sản phẩm PTI</div>
+          <div className="footer-subbrands-grid">
+            {subBrands.map((b) => <PtiBrandMark key={b.pretty} {...b} />)}
+          </div>
         </div>
-        <div>
-          <h5>Dịch vụ chính</h5>
-          <ul>
-            <li><a href="#services">Bảo hiểm xe cơ giới</a></li>
-            <li><a href="#services">Bảo hiểm sức khỏe</a></li>
-            <li><a href="#services">Bảo hiểm tài sản</a></li>
-            <li><a href="#services">Bảo hiểm du lịch</a></li>
-            <li><a href="#services">Bảo hiểm doanh nghiệp</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5>Trang</h5>
-          <ul>
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#process">Quy trình</a></li>
-            <li><a href="#reviews">Đánh giá</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-          </ul>
+
+        {/* Links grid */}
+        <div className="footer-grid">
+          <div>
+            <h5>Liên hệ nhanh</h5>
+            <ul>
+              <li><a href={`tel:${advisor.phone.replace(/\s/g, "")}`}>{advisor.phone}</a></li>
+              <li><a href={`mailto:${advisor.email}`}>{advisor.email}</a></li>
+              <li><a href="#contact">Zalo · Facebook</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Dịch vụ chính</h5>
+            <ul>
+              <li><a href="#services">Bảo hiểm xe cơ giới</a></li>
+              <li><a href="#services">Bảo hiểm sức khỏe</a></li>
+              <li><a href="#services">Bảo hiểm tài sản</a></li>
+              <li><a href="#services">Bảo hiểm du lịch</a></li>
+              <li><a href="#services">Bảo hiểm doanh nghiệp</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Trang</h5>
+            <ul>
+              <li><a href="#about">Giới thiệu</a></li>
+              <li><a href="#process">Quy trình</a></li>
+              <li><a href="#reviews">Đánh giá</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Website chính thức</h5>
+            <ul>
+              <li><a href="https://www.pti.com.vn" target="_blank" rel="noopener">www.pti.com.vn</a></li>
+            </ul>
+            <p className="footer-mini">
+              Tổng Công ty CP<br />Bảo hiểm Bưu điện (PTI)
+            </p>
+          </div>
         </div>
       </div>
+
       <div className="wrap footer-disclaimer">
         <p>
           <b style={{ color: "rgba(255,255,255,.85)" }}>Ghi chú:</b> Thông tin trên website chỉ mang tính tham khảo.
@@ -703,6 +842,8 @@ function App() {
 
   const advisor = {
     name: t.advisorName,
+    title: t.advisorTitle,
+    branch: t.advisorBranch,
     region: t.advisorRegion,
     phone: t.advisorPhone,
     email: t.advisorEmail
@@ -728,29 +869,29 @@ function App() {
       <TweaksPanel title="Tweaks">
         <TweakSection label="Giao diện" />
         <TweakColor label="Bảng màu" value={getPaletteSwatches(t.palette)}
-        options={[
-        ["#0E2A57", "#1E4FB8", "#F5A623"],
-        ["#0F3B36", "#2D9D8E", "#E07A3C"],
-        ["#152545", "#2C447C", "#C46A2E"]]
-        }
-        onChange={(arr) => setTweak("palette", swatchesToPalette(arr))} />
+          options={[
+            ["#0E2A57", "#1E4FB8", "#F5A623"],
+            ["#0F3B36", "#2D9D8E", "#E07A3C"],
+            ["#152545", "#2C447C", "#C46A2E"]]
+          }
+          onChange={(arr) => setTweak("palette", swatchesToPalette(arr))} />
         <TweakRadio label="Chế độ" value={t.palette}
-        options={[
-        { value: "midnight-azure", label: "Azure" },
-        { value: "trust-teal", label: "Teal" },
-        { value: "ivory-navy", label: "Ivory" }]
-        }
-        onChange={(v) => setTweak("palette", v)} />
+          options={[
+            { value: "midnight-azure", label: "Azure" },
+            { value: "trust-teal", label: "Teal" },
+            { value: "ivory-navy", label: "Ivory" }]
+          }
+          onChange={(v) => setTweak("palette", v)} />
         <TweakSelect label="Font chữ" value={t.serif}
-        options={["Plus Jakarta Sans", "Be Vietnam Pro", "Inter", "DM Sans", "Manrope"]}
-        onChange={(v) => setTweak("serif", v)} />
+          options={["Plus Jakarta Sans", "Be Vietnam Pro", "Inter", "DM Sans", "Manrope"]}
+          onChange={(v) => setTweak("serif", v)} />
         <TweakRadio label="Khoảng cách" value={t.density}
-        options={[
-        { value: "compact", label: "Compact" },
-        { value: "cozy", label: "Cozy" },
-        { value: "spacious", label: "Spacious" }]
-        }
-        onChange={(v) => setTweak("density", v)} />
+          options={[
+            { value: "compact", label: "Compact" },
+            { value: "cozy", label: "Cozy" },
+            { value: "spacious", label: "Spacious" }]
+          }
+          onChange={(v) => setTweak("density", v)} />
 
         <TweakSection label="Thông tin tư vấn viên" />
         <TweakText label="Tên" value={t.advisorName} onChange={(v) => setTweak("advisorName", v)} />
