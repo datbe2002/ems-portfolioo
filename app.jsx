@@ -447,7 +447,7 @@ function FAQ() {
   const items = [
     {
       q: "Bảo hiểm phi nhân thọ là gì?",
-      a: "Là các sản phẩm bảo hiểm bảo vệ trước rủi ro về tài sản, sức khỏe, trách nhiệm dân sự, xe cơ giới, du lịch và hoạt động kinh doanh. Khác với bảo hiểm nhân thọ, các sản phẩm này thường có thời hạn ngắn (1 năm) và tập trung vào bồi thường thiệt hại khi xảy ra rủi ro."
+      a: "Bảo hiểm Phi Nhân Thọ giúp mình giảm bớt gánh nặng chi phí trước những rủi ro bất ngờ trong cuộc sống. Từ ô tô, xe máy, sức khỏe, tai nạn, nhà xưởng, tài sản đến du lịch… Em Trang PTI đều có thể hỗ trợ tư vấn, báo phí và cấp đơn nhanh ạ"
     },
     {
       q: "Tôi nên mua loại bảo hiểm nào trước?",
