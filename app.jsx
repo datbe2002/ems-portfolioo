@@ -625,7 +625,7 @@ function Contact({ advisor }) {
               </div>
               <div className="info-row">
                 <span className="ico"><Ico.pin style={{ width: 18, height: 18 }} /></span>
-                <div><b>Khu vực hỗ trợ</b><span>{advisor.region}</span></div>
+                <div><b>Khu vực hỗ trợ</b><span>Toàn quốc</span></div>
               </div>
               <div className="info-row">
                 <span className="ico"><Ico.clock style={{ width: 18, height: 18 }} /></span>
