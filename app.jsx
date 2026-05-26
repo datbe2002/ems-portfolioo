@@ -62,7 +62,7 @@ function Logo({ subtitle = "Tư vấn bảo hiểm PTI" }) {
 
 function LogoMark() {
   return (
-    <img className="lm-svg" src="https://www.pti.com.vn/wp-content/uploads/2021/06/people-trust-insurance-white.png"
+    <img className="lm-svg" src="assets/logowhite.png"
          alt="PTI" loading="lazy" decoding="async" />
   );
 }
@@ -267,7 +267,7 @@ function Services() {
   { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
   { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
   { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
-  { ico: <Ico.building />, title: "Bảo hiểm doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
+  { ico: <Ico.building />, title: "Bảo hiểm CSSK doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
   { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
 
   return (
@@ -561,13 +561,13 @@ function Contact({ advisor }) {
               <select value={form.need} onChange={onChange("need")}>
                 {["Bảo hiểm xe ô tô / xe máy", "Bảo hiểm sức khỏe cá nhân",
                   "Bảo hiểm tài sản", "Bảo hiểm du lịch",
-                  "Bảo hiểm doanh nghiệp", "Tư vấn hồ sơ bồi thường",
+                  "Bảo hiểm CSSK doanh nghiệp", "Tư vấn hồ sơ bồi thường",
                   "Tôi chưa rõ — cần tư vấn"].map((o) => <option key={o}>{o}</option>)}
               </select>
             </div>
             <div className="field">
               <label>Tin nhắn (không bắt buộc)</label>
-              <textarea placeholder="Mô tả ngắn ví dụ ra, hiệu xe, năm sản xuất..."
+              <textarea placeholder="Mô tả ngắn ví dụ: hiệu xe, năm sản xuất..."
                 value={form.msg} onChange={onChange("msg")} />
             </div>
 
@@ -678,11 +678,11 @@ function PtiBrandMark({ pretty, tag, accent = "#F5A623", logoUrl }) {
 function Footer({ advisor }) {
   const subBrands = [
     { pretty: "Health",     tag: "Sức khỏe & Bảo hiểm",          accent: "#3D74E0",
-      logoUrl: "https://www.pti.com.vn/wp-content/uploads/2026/02/Logo-PTI-Health.1.png" },
+      logoUrl: "assets/logohealth.png" },
     { pretty: "SOS",        tag: "Cứu hộ & Bảo hiểm",            accent: "#F5A623",
-      logoUrl: "https://www.pti.com.vn/wp-content/uploads/2024/10/Group-1.png" },
+      logoUrl: "assets/logosos.png" },
     { pretty: "Commercial", tag: "Chuyên gia tư vấn & Bảo hiểm", accent: "#F5A623",
-      logoUrl: "https://www.pti.com.vn/wp-content/uploads/2024/10/Group-2.png" },
+      logoUrl: "assets/logocommerce.png" },
   ];
   return (
     <footer className="footer">
@@ -692,7 +692,7 @@ function Footer({ advisor }) {
           <div className="footer-card-head">
             <div className="footer-card-logo">
               <img className="pti-official"
-                   src="https://www.pti.com.vn/wp-content/uploads/2021/06/people-trust-insurance.png"
+                   src="assets/logo1.png"
                    alt="PTI — Bảo hiểm Bưu điện" loading="lazy" decoding="async" />
             </div>
             <div className="footer-card-pub">BẢO HIỂM BƯU ĐIỆN</div>
@@ -748,7 +748,7 @@ function Footer({ advisor }) {
               <li><a href="#services">Bảo hiểm sức khỏe</a></li>
               <li><a href="#services">Bảo hiểm tài sản</a></li>
               <li><a href="#services">Bảo hiểm du lịch</a></li>
-              <li><a href="#services">Bảo hiểm doanh nghiệp</a></li>
+              <li><a href="#services">Bảo hiểm CSSK doanh nghiệp</a></li>
             </ul>
           </div>
           <div>
