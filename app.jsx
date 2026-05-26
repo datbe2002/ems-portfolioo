@@ -4,10 +4,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "palette": "midnight-azure",
   "serif": "Plus Jakarta Sans",
   "density": "cozy",
-  "advisorName": "Nguyễn Minh Anh",
-  "advisorRegion": "Hà Nội & các tỉnh phía Bắc",
-  "advisorPhone": "0987 654 321",
-  "advisorEmail": "minhanh.pti@gmail.com"
+  "advisorName": "Tăng Thị Thảo Trang",
+  "advisorRegion": "TPHCM",
+  "advisorPhone": "086 6033594",
+  "advisorEmail": "thaotrang5901@gmail.com"
 } /*EDITMODE-END*/;
 
 // ── icons ────────────────────────────────────────────────────────────────
