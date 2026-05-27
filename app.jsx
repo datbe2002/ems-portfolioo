@@ -63,17 +63,17 @@ function Logo({ subtitle = "Tư vấn bảo hiểm PTI" }) {
 function LogoMark() {
   return (
     <img className="lm-svg" src="assets/logowhite.png"
-         alt="PTI" loading="lazy" decoding="async" />
+      alt="PTI" loading="lazy" decoding="async" />
   );
 }
 
 const NAV = [
-{ id: "about", label: "Giới thiệu" },
-{ id: "services", label: "Dịch vụ" },
-{ id: "process", label: "Quy trình" },
-{ id: "reviews", label: "Đánh giá" },
-{ id: "faq", label: "FAQ" },
-{ id: "contact", label: "Liên hệ" }];
+  { id: "about", label: "Giới thiệu" },
+  { id: "services", label: "Dịch vụ" },
+  { id: "process", label: "Quy trình" },
+  { id: "reviews", label: "Đánh giá" },
+  { id: "faq", label: "FAQ" },
+  { id: "contact", label: "Liên hệ" }];
 
 
 function Header({ onCta }) {
@@ -96,22 +96,22 @@ function Header({ onCta }) {
         <div className="wrap hdr-inner">
           <nav className="nav-desktop">
             {NAV.map((n) =>
-            <a key={n.id} className="nav-link" onClick={() => go(n.id)}>{n.label}</a>
+              <a key={n.id} className="nav-link" onClick={() => go(n.id)}>{n.label}</a>
             )}
           </nav>
           <button className="btn btn-primary btn-sm hdr-cta" onClick={onCta}>
             Tư vấn miễn phí <Ico.arrow style={{ width: 14, height: 14 }} />
           </button>
           <button className="btn btn-secondary btn-sm nav-mobile-btn" aria-label="Menu"
-          onClick={() => setMobileOpen((v) => !v)}>
+            onClick={() => setMobileOpen((v) => !v)}>
             {mobileOpen ? <Ico.x style={{ width: 16, height: 16 }} /> : <Ico.burger style={{ width: 16, height: 16 }} />}
           </button>
         </div>
       </header>
       {mobileOpen &&
-      <div className="mobile-menu">
+        <div className="mobile-menu">
           {NAV.map((n) => <a key={n.id} onClick={() => go(n.id)}>{n.label}</a>)}
-          <button className="btn btn-primary" onClick={() => {setMobileOpen(false);onCta();}}>
+          <button className="btn btn-primary" onClick={() => { setMobileOpen(false); onCta(); }}>
             Nhận tư vấn miễn phí <Ico.arrow style={{ width: 16, height: 16 }} />
           </button>
         </div>
@@ -143,10 +143,10 @@ function PortraitSilhouette({ tint = "rgba(255,255,255,.18)" }) {
 // ── Hero ────────────────────────────────────────────────────────────────
 function Hero({ onCta, advisorName }) {
   const trustBadges = [
-  "Tư vấn rõ ràng",
-  "Hỗ trợ nhanh chóng",
-  "Đồng hành khi bồi thường",
-  "Giải pháp từ PTI"];
+    "Tư vấn rõ ràng",
+    "Hỗ trợ nhanh chóng",
+    "Đồng hành khi bồi thường",
+    "Giải pháp từ PTI"];
 
   return (
     <section className="hero" id="top" data-screen-label="01 Hero">
@@ -176,7 +176,7 @@ function Hero({ onCta, advisorName }) {
           </div>
           <div className="trust-row">
             {trustBadges.map((t) =>
-            <span key={t} className="trust-pill">
+              <span key={t} className="trust-pill">
                 <Ico.check />
                 {t}
               </span>
@@ -187,8 +187,8 @@ function Hero({ onCta, advisorName }) {
         <div className="reveal in" style={{ transitionDelay: ".15s" }}>
           <div className="portrait">
             <img className="photo" src="assets/advisor-portrait.png"
-                 alt="Tư vấn viên bảo hiểm PTI"
-                 loading="eager" fetchpriority="high" decoding="async" />
+              alt="Tư vấn viên bảo hiểm PTI"
+              loading="eager" fetchpriority="high" decoding="async" />
             <div className="portrait-badge">
               <span className="dot" />
               Đang nhận tư vấn
@@ -203,9 +203,9 @@ function Hero({ onCta, advisorName }) {
 // ── About ───────────────────────────────────────────────────────────────
 function About({ advisorName }) {
   const values = [
-  { ico: <Ico.spark />, title: "Minh bạch trong tư vấn", desc: "Giải thích đầy đủ điều khoản, phạm vi và điều kiện trước khi ký hợp đồng." },
-  { ico: <Ico.heart />, title: "Tận tâm khi hỗ trợ", desc: "Lắng nghe nhu cầu thực tế, không ép mua, không phóng đại quyền lợi." },
-  { ico: <Ico.shield />, title: "Đồng hành khi rủi ro", desc: "Hỗ trợ chuẩn bị hồ sơ và theo dõi tiến độ bồi thường cùng khách hàng." }];
+    { ico: <Ico.spark />, title: "Minh bạch trong tư vấn", desc: "Giải thích đầy đủ điều khoản, phạm vi và điều kiện trước khi ký hợp đồng." },
+    { ico: <Ico.heart />, title: "Tận tâm khi hỗ trợ", desc: "Lắng nghe nhu cầu thực tế, không ép mua, không phóng đại quyền lợi." },
+    { ico: <Ico.shield />, title: "Đồng hành khi rủi ro", desc: "Hỗ trợ chuẩn bị hồ sơ và theo dõi tiến độ bồi thường cùng khách hàng." }];
 
   return (
     <section className="section" id="about" data-screen-label="02 About">
@@ -216,8 +216,8 @@ function About({ advisorName }) {
               <div className="frame-corner tl" />
               <div className="frame-corner br" />
               <img className="photo" src="assets/advisor-about.png"
-                   alt="Tư vấn viên bảo hiểm PTI"
-                   loading="lazy" decoding="async" />
+                alt="Tư vấn viên bảo hiểm PTI"
+                loading="lazy" decoding="async" />
               <div className="credential" style={{ opacity: "0" }}>
                 <span className="logo-mark">
                   <Ico.shield style={{ width: 14, height: 14 }} />
@@ -234,19 +234,19 @@ function About({ advisorName }) {
             <span className="section-eyebrow">Về tôi</span>
             <h2 className="section-title">Đồng hành cùng bạn,<br />không chỉ là một hợp đồng bảo hiểm.</h2>
             <p style={{ fontSize: 16.5, lineHeight: 1.7, color: "var(--ink-2)", marginTop: 0 }}>
-              Tôi là <b style={{ color: "var(--ink)" }}>{advisorName}</b>, hiện đang làm việc trong lĩnh vực
-              bảo hiểm phi nhân thọ tại PTI. Tôi hỗ trợ khách hàng lựa chọn các giải pháp bảo hiểm
-              phù hợp với nhu cầu thực tế — từ bảo hiểm xe cơ giới, sức khỏe, tài sản đến bảo hiểm
-              cho doanh nghiệp.
+              Tôi là <b style={{ color: "var(--ink)" }}>{advisorName}</b>, hiện đang công tác trong lĩnh vực bảo hiểm phi nhân thọ tại PTI. Tôi hỗ trợ khách hàng
+              lựa chọn các giải pháp bảo hiểm phù hợp với nhu cầu thực tế - từ bảo hiểm xe cơ giới, sức khỏe, cháy nổ, tài sản, hàng hóa đến bảo hiểm du lịch...
+
+
             </p>
             <p style={{ fontSize: 16.5, lineHeight: 1.7, color: "var(--ink-2)" }}>
-              Mục tiêu của tôi không chỉ là bán một hợp đồng bảo hiểm, mà là giúp khách hàng
-              <b style={{ color: "var(--ink)" }}> hiểu đúng, chọn đúng và được hỗ trợ đúng lúc</b> khi cần.
+              Mục tiêu của tôi không chỉ là mang đến một hợp đồng bảo hiểm, mà còn giúp khách hàng hiểu đúng, lựa chọn phù hợp và luôn được hỗ trợ kịp thời khi cần. 
+              Với mong muốn xây dựng một tệp khách hàng bền vững và gắn bó lâu dài, tôi luôn đề cao <b style={{ color: "var(--ink)" }}>sự rõ ràng, tận tâm và uy tín</b> trong từng dịch vụ mình cung cấp.
             </p>
 
             <div className="values">
               {values.map((v) =>
-              <div key={v.title} className="value">
+                <div key={v.title} className="value">
                   <span className="ico">{React.cloneElement(v.ico, { style: { width: 18, height: 18 } })}</span>
                   <b>{v.title}</b>
                   <span>{v.desc}</span>
@@ -263,12 +263,12 @@ function About({ advisorName }) {
 // ── Services ────────────────────────────────────────────────────────────
 function Services() {
   const items = [
-  { ico: <Ico.car />, title: "Bảo hiểm xe ô tô / xe máy", desc: "Bảo vệ trước rủi ro tai nạn, va chạm, trách nhiệm dân sự và thiệt hại vật chất xe." },
-  { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
-  { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
-  { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
-  { ico: <Ico.building />, title: "Bảo hiểm CSSK doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
-  { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
+    { ico: <Ico.car />, title: "Bảo hiểm xe ô tô / xe máy", desc: "Bảo vệ trước rủi ro tai nạn, va chạm, trách nhiệm dân sự và thiệt hại vật chất xe." },
+    { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
+    { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
+    { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
+    { ico: <Ico.building />, title: "Bảo hiểm CSSK doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
+    { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
 
   return (
     <section className="section" id="services" data-screen-label="03 Services" style={{ background: "linear-gradient(180deg, transparent, color-mix(in oklab, var(--brand-soft) 50%, var(--bg)))" }}>
@@ -283,14 +283,14 @@ function Services() {
         </div>
         <div className="grid-3 reveal">
           {items.map((s) =>
-          <div key={s.title} className="card card-hover svc">
+            <div key={s.title} className="card card-hover svc">
               <span className="svc-ico">{React.cloneElement(s.ico, { style: { width: 24, height: 24 } })}</span>
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
               <a className="more" href="#contact" onClick={(e) => {
-              e.preventDefault();
-              scrollToId("contact");
-            }}>
+                e.preventDefault();
+                scrollToId("contact");
+              }}>
                 Tìm hiểu thêm <Ico.arrow style={{ width: 14, height: 14 }} />
               </a>
             </div>
@@ -304,12 +304,12 @@ function Services() {
 // ── Why ─────────────────────────────────────────────────────────────────
 function Why() {
   const reasons = [
-  "Tư vấn dựa trên nhu cầu thực tế, không ép mua",
-  "Giải thích điều khoản bảo hiểm dễ hiểu",
-  "Hỗ trợ trước, trong và sau khi ký hợp đồng",
-  "Đồng hành khi khách hàng cần làm hồ sơ bồi thường",
-  "Đưa ra giải pháp phù hợp với ngân sách",
-  "Làm việc chuyên nghiệp, phản hồi nhanh"];
+    "Tư vấn dựa trên nhu cầu thực tế, không ép mua",
+    "Giải thích điều khoản bảo hiểm dễ hiểu",
+    "Hỗ trợ trước, trong và sau khi ký hợp đồng",
+    "Đồng hành khi khách hàng cần làm hồ sơ bồi thường",
+    "Đưa ra giải pháp phù hợp với ngân sách",
+    "Làm việc chuyên nghiệp, phản hồi nhanh"];
 
   return (
     <section className="section" id="why" data-screen-label="04 Why">
@@ -320,19 +320,19 @@ function Why() {
         </div>
         <div className="why-grid reveal">
           {reasons.map((r, i) =>
-          <div key={r} className="why-item">
+            <div key={r} className="why-item">
               <span className="num">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <b>{r}</b>
                 <span>
                   {[
-                "Lắng nghe trước, đề xuất sau — không gây áp lực quyết định.",
-                "Bóc tách các điều khoản phức tạp thành ngôn ngữ đời thường.",
-                "Hỗ trợ liên tục, kể cả sau khi hợp đồng đã có hiệu lực.",
-                "Tôi đứng cạnh bạn trong toàn bộ quy trình bồi thường.",
-                "Cân đối quyền lợi và ngân sách thay vì chọn gói đắt nhất.",
-                "Cam kết phản hồi trong thời gian hợp lý, không để bạn chờ."][
-                i]}
+                    "Lắng nghe trước, đề xuất sau — không gây áp lực quyết định.",
+                    "Bóc tách các điều khoản phức tạp thành ngôn ngữ đời thường.",
+                    "Hỗ trợ liên tục, kể cả sau khi hợp đồng đã có hiệu lực.",
+                    "Tôi đứng cạnh bạn trong toàn bộ quy trình bồi thường.",
+                    "Cân đối quyền lợi và ngân sách thay vì chọn gói đắt nhất.",
+                    "Cam kết phản hồi trong thời gian hợp lý, không để bạn chờ."][
+                    i]}
                 </span>
               </div>
             </div>
@@ -346,10 +346,10 @@ function Why() {
 // ── Process ─────────────────────────────────────────────────────────────
 function Process() {
   const steps = [
-  { n: "01", t: "Lắng nghe nhu cầu", d: "Tìm hiểu tình trạng cá nhân, tài sản, phương tiện hoặc doanh nghiệp của khách hàng." },
-  { n: "02", t: "Đề xuất giải pháp", d: "Gợi ý gói bảo hiểm phù hợp với nhu cầu và ngân sách của bạn." },
-  { n: "03", t: "Giải thích quyền lợi", d: "Làm rõ phạm vi, điều khoản loại trừ, phí bảo hiểm và quy trình bồi thường." },
-  { n: "04", t: "Đồng hành sau bán", d: "Hỗ trợ khi cần thay đổi thông tin, gia hạn hợp đồng hoặc yêu cầu bồi thường." }];
+    { n: "01", t: "Lắng nghe nhu cầu", d: "Tìm hiểu tình trạng cá nhân, tài sản, phương tiện hoặc doanh nghiệp của khách hàng." },
+    { n: "02", t: "Đề xuất giải pháp", d: "Gợi ý gói bảo hiểm phù hợp với nhu cầu và ngân sách của bạn." },
+    { n: "03", t: "Giải thích quyền lợi", d: "Làm rõ phạm vi, điều khoản loại trừ, phí bảo hiểm và quy trình bồi thường." },
+    { n: "04", t: "Đồng hành sau bán", d: "Hỗ trợ khi cần thay đổi thông tin, gia hạn hợp đồng hoặc yêu cầu bồi thường." }];
 
   return (
     <section className="section" id="process" data-screen-label="05 Process" style={{ background: "linear-gradient(180deg, color-mix(in oklab, var(--brand-soft) 50%, var(--bg)), transparent)" }}>
@@ -363,7 +363,7 @@ function Process() {
         </div>
         <div className="process reveal">
           {steps.map((s) =>
-          <div key={s.n} className="step">
+            <div key={s.n} className="step">
               <span className="marker">{s.n}</span>
               <h4>{s.t}</h4>
               <p>{s.d}</p>
@@ -378,10 +378,10 @@ function Process() {
 // ── Stats ───────────────────────────────────────────────────────────────
 function Stats() {
   const stats = [
-  { big: "100+", small: "khách hàng đã được tư vấn và đồng hành" },
-  { big: "24 / 7", small: "sẵn sàng hỗ trợ thông tin khi cần thiết" },
-  { big: "6", small: "nhóm sản phẩm bảo hiểm phi nhân thọ chủ lực" },
-  { big: "A → Z", small: "đồng hành từ tư vấn đến bồi thường" }];
+    { big: "100+", small: "khách hàng đã được tư vấn và đồng hành" },
+    { big: "24 / 7", small: "sẵn sàng hỗ trợ thông tin khi cần thiết" },
+    { big: "6", small: "nhóm sản phẩm bảo hiểm phi nhân thọ chủ lực" },
+    { big: "A → Z", small: "đồng hành từ tư vấn đến bồi thường" }];
 
   return (
     <section className="section" id="stats" data-screen-label="06 Stats" style={{ paddingTop: 0 }}>
@@ -389,7 +389,7 @@ function Stats() {
         <div className="stats">
           <div className="stats-grid">
             {stats.map((s) =>
-            <div key={s.big} className="stat">
+              <div key={s.big} className="stat">
                 <b>{s.big}</b>
                 <span>{s.small}</span>
               </div>
@@ -404,9 +404,9 @@ function Stats() {
 // ── Testimonials ────────────────────────────────────────────────────────
 function Testimonials() {
   const items = [
-  { q: "Bạn tư vấn rất dễ hiểu, giúp tôi chọn gói bảo hiểm xe phù hợp mà không bị rối bởi quá nhiều điều khoản.", who: "Anh Tuấn", role: "Khách hàng cá nhân — Hà Nội", initial: "T" },
-  { q: "Khi cần hỏi về hồ sơ bồi thường, tôi được hỗ trợ nhanh và rõ ràng. Cảm giác có người đồng hành thật sự khác biệt.", who: "Chị Hương", role: "Chủ hộ kinh doanh — Hải Phòng", initial: "H" },
-  { q: "Tôi thích cách tư vấn minh bạch, không ép mua, phân tích đúng nhu cầu — chứ không phải gói đắt nhất.", who: "Anh Quang", role: "Khách hàng doanh nghiệp — Bắc Ninh", initial: "Q" }];
+    { q: "Bạn tư vấn rất dễ hiểu, giúp tôi chọn gói bảo hiểm xe phù hợp mà không bị rối bởi quá nhiều điều khoản.", who: "Anh Tuấn", role: "Khách hàng cá nhân — Hà Nội", initial: "T" },
+    { q: "Khi cần hỏi về hồ sơ bồi thường, tôi được hỗ trợ nhanh và rõ ràng. Cảm giác có người đồng hành thật sự khác biệt.", who: "Chị Hương", role: "Chủ hộ kinh doanh — Hải Phòng", initial: "H" },
+    { q: "Tôi thích cách tư vấn minh bạch, không ép mua, phân tích đúng nhu cầu — chứ không phải gói đắt nhất.", who: "Anh Quang", role: "Khách hàng doanh nghiệp — Bắc Ninh", initial: "Q" }];
 
   return (
     <section className="section" id="reviews" data-screen-label="07 Testimonials">
@@ -417,7 +417,7 @@ function Testimonials() {
         </div>
         <div className="grid-3 reveal">
           {items.map((it, i) =>
-          <div key={i} className="card quote">
+            <div key={i} className="card quote">
               <div className="stars">
                 {[0, 1, 2, 3, 4].map((s) => <Ico.star key={s} />)}
               </div>
@@ -471,7 +471,7 @@ function FAQ() {
         </div>
         <div className="faq-list reveal">
           {items.map((it, i) =>
-          <div key={i} className="faq-item" data-open={open === i}>
+            <div key={i} className="faq-item" data-open={open === i}>
               <button className="faq-q" onClick={() => setOpen(open === i ? -1 : i)}>
                 <span>{it.q}</span>
                 <span className="faq-icon"><Ico.plus style={{ width: 14, height: 14 }} /></span>
@@ -650,7 +650,7 @@ function Contact({ advisor }) {
         </div>
       </div>
     </section>
-    );
+  );
 }
 
 // ── Footer ──────────────────────────────────────────────────────────────
@@ -677,12 +677,18 @@ function PtiBrandMark({ pretty, tag, accent = "#F5A623", logoUrl }) {
 
 function Footer({ advisor }) {
   const subBrands = [
-    { pretty: "Health",     tag: "Sức khỏe & Bảo hiểm",          accent: "#3D74E0",
-      logoUrl: "assets/logohealth.png" },
-    { pretty: "SOS",        tag: "Cứu hộ & Bảo hiểm",            accent: "#F5A623",
-      logoUrl: "assets/logosos.png" },
-    { pretty: "Commercial", tag: "Chuyên gia tư vấn & Bảo hiểm", accent: "#F5A623",
-      logoUrl: "assets/logocommerce.png" },
+    {
+      pretty: "Health", tag: "Sức khỏe & Bảo hiểm", accent: "#3D74E0",
+      logoUrl: "assets/logohealth.png"
+    },
+    {
+      pretty: "SOS", tag: "Cứu hộ & Bảo hiểm", accent: "#F5A623",
+      logoUrl: "assets/logosos.png"
+    },
+    {
+      pretty: "Commercial", tag: "Chuyên gia tư vấn & Bảo hiểm", accent: "#F5A623",
+      logoUrl: "assets/logocommerce.png"
+    },
   ];
   return (
     <footer className="footer">
@@ -692,8 +698,8 @@ function Footer({ advisor }) {
           <div className="footer-card-head">
             <div className="footer-card-logo">
               <img className="pti-official"
-                   src="assets/logo1.png"
-                   alt="PTI — Bảo hiểm Bưu điện" loading="lazy" decoding="async" />
+                src="assets/logo1.png"
+                alt="PTI — Bảo hiểm Bưu điện" loading="lazy" decoding="async" />
             </div>
             <div className="footer-card-pub">BẢO HIỂM BƯU ĐIỆN</div>
           </div>
@@ -775,8 +781,7 @@ function Footer({ advisor }) {
 
       <div className="wrap footer-disclaimer">
         <p>
-          <b style={{ color: "rgba(255,255,255,.85)" }}>Ghi chú:</b> Thông tin trên website chỉ mang tính tham khảo.
-          Quyền lợi bảo hiểm cụ thể phụ thuộc vào điều khoản, điều kiện và hợp đồng bảo hiểm được phát hành bởi PTI.
+          <b style={{ color: "rgba(255,255,255,.85)" }}>Ghi chú:</b> Đây là website cá nhân của Tăng Thị Thảo Trang, không phải website chính thức của Tổng Công ty Cổ phần Bảo hiểm Bưu điện PTI. Thông tin trên website chỉ mang tính tham khảo/tư vấn ban đầu; điều khoản và quyền lợi chính thức áp dụng theo hợp đồng, giấy chứng nhận bảo hiểm và tài liệu do PTI phát hành.
         </p>
         <p>© {new Date().getFullYear()} {advisor.name} · Tư vấn bảo hiểm tại PTI.</p>
       </div>
@@ -867,29 +872,29 @@ function App() {
       <TweaksPanel title="Tweaks">
         <TweakSection label="Giao diện" />
         <TweakColor label="Bảng màu" value={getPaletteSwatches(t.palette)}
-        options={[
-        ["#0E2A57", "#1E4FB8", "#F5A623"],
-        ["#0F3B36", "#2D9D8E", "#E07A3C"],
-        ["#152545", "#2C447C", "#C46A2E"]]
-        }
-        onChange={(arr) => setTweak("palette", swatchesToPalette(arr))} />
+          options={[
+            ["#0E2A57", "#1E4FB8", "#F5A623"],
+            ["#0F3B36", "#2D9D8E", "#E07A3C"],
+            ["#152545", "#2C447C", "#C46A2E"]]
+          }
+          onChange={(arr) => setTweak("palette", swatchesToPalette(arr))} />
         <TweakRadio label="Chế độ" value={t.palette}
-        options={[
-        { value: "midnight-azure", label: "Azure" },
-        { value: "trust-teal", label: "Teal" },
-        { value: "ivory-navy", label: "Ivory" }]
-        }
-        onChange={(v) => setTweak("palette", v)} />
+          options={[
+            { value: "midnight-azure", label: "Azure" },
+            { value: "trust-teal", label: "Teal" },
+            { value: "ivory-navy", label: "Ivory" }]
+          }
+          onChange={(v) => setTweak("palette", v)} />
         <TweakSelect label="Font chữ" value={t.serif}
-        options={["Plus Jakarta Sans", "Be Vietnam Pro", "Inter", "DM Sans", "Manrope"]}
-        onChange={(v) => setTweak("serif", v)} />
+          options={["Plus Jakarta Sans", "Be Vietnam Pro", "Inter", "DM Sans", "Manrope"]}
+          onChange={(v) => setTweak("serif", v)} />
         <TweakRadio label="Khoảng cách" value={t.density}
-        options={[
-        { value: "compact", label: "Compact" },
-        { value: "cozy", label: "Cozy" },
-        { value: "spacious", label: "Spacious" }]
-        }
-        onChange={(v) => setTweak("density", v)} />
+          options={[
+            { value: "compact", label: "Compact" },
+            { value: "cozy", label: "Cozy" },
+            { value: "spacious", label: "Spacious" }]
+          }
+          onChange={(v) => setTweak("density", v)} />
 
         <TweakSection label="Thông tin tư vấn viên" />
         <TweakText label="Tên" value={t.advisorName} onChange={(v) => setTweak("advisorName", v)} />
