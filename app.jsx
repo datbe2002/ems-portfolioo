@@ -267,7 +267,7 @@ function Services() {
     { ico: <Ico.heart />, title: "Bảo hiểm sức khỏe cá nhân", desc: "Hỗ trợ chi phí y tế, nằm viện, điều trị và chăm sóc sức khỏe cho bạn và gia đình." },
     { ico: <Ico.home />, title: "Bảo hiểm tài sản", desc: "Bảo vệ nhà ở, văn phòng, cửa hàng, kho hàng và những tài sản có giá trị." },
     { ico: <Ico.plane />, title: "Bảo hiểm du lịch", desc: "Hỗ trợ rủi ro trong chuyến đi: tai nạn, y tế, hành lý và sự cố ngoài ý muốn." },
-    { ico: <Ico.building />, title: "Bảo hiểm CSSK doanh nghiệp", desc: "Giải pháp bảo vệ tài sản, nhân sự và hoạt động kinh doanh cho doanh nghiệp." },
+    { ico: <Ico.building />, title: "Bảo hiểm CSSK doanh nghiệp", desc: "Đồng hành cùng doanh nghiệp xây dựng chế độ phúc lợi bền vững với các gói bảo hiểm sức khỏe phù hợp từng quy mô và ngân sách." },
     { ico: <Ico.doc />, title: "Tư vấn hồ sơ bồi thường", desc: "Hỗ trợ chuẩn bị hồ sơ, hiểu quy trình và theo dõi tiến độ bồi thường minh bạch." }];
 
   return (
